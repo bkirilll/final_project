@@ -35,3 +35,7 @@
     return num;
 }
 
+void Print(int[] arr)
+{
+    System.Console.WriteLine("[" + string.Join(", ", arr) + "]");
+}
