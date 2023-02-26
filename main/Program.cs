@@ -35,7 +35,33 @@
     return num;
 }
 
-void Print(int[] arr)
+void Print(string[] arr)
 {
-    System.Console.WriteLine("[" + string.Join(", ", arr) + "]");
+    System.Console.WriteLine("[" + string.Join(" ", arr) + "]");
 }
+
+string[] ArrayOfStrWith3Elem(string[] input)
+{
+    string[] arr = new string[input.Length];
+    int index = 0;
+
+    for (int i = 0; i < input.Length; i++)
+    {
+        if (input[i].Length <= 3)
+        {
+            arr[index] = input[i];
+            index++;
+        }
+        else
+        {
+            index++;
+        }
+    }
+    return arr;
+}
+
+Console.Write("Введите слова через запятую без пробела: ");
+string[] firstArray = StrToArray(Console.ReadLine());
+Print(firstArray);
+string[] finalArray = ArrayOfStrWith3Elem(firstArray);
+Print(finalArray);
